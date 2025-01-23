@@ -40,14 +40,15 @@ public class Reservation {
 
     @Override
     public String toString() {
-        return "Room "
-                + roomNumber
-                + ", check-in: "
-                + checkIn.format(dtf)
-                + ", check-out: "
-                + checkOut.format(dtf)
-                + ", "
-                + duration()
-                + " nights";
-}
+        StringBuilder sb = new StringBuilder();
+        sb.append("Room ");
+        sb.append(roomNumber);
+        sb.append(", check-in: ");
+        sb.append(checkIn.format(dtf));
+        sb.append(", check-out: ");
+        sb.append(checkOut.format(dtf));
+        sb.append(", " + duration());
+        sb.append(" nights");
+        return sb.toString();
+    }
 }
